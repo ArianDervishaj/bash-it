@@ -2,14 +2,14 @@
 # shellcheck disable=SC2034 # Expected behavior for themes.
 
 # Prompt defaut configuration
-BARBUK_PROMPT=${BARBUK_PROMPT:="git-uptream-remote-logo ssh path scm python_venv ruby node terraform cloud duration exit"}
+BARBUK_PROMPT=${BARBUK_PROMPT:="git-uptream-remote-logo ssh path scm python_venv ruby terraform cloud duration exit"}
 
 # Theme custom glyphs
 # SCM
 SCM_GIT_CHAR_GITLAB=${BARBUK_GITLAB_CHAR:='  '}
 SCM_GIT_CHAR_BITBUCKET=${BARBUK_BITBUCKET_CHAR:='  '}
 SCM_GIT_CHAR_GITHUB=${BARBUK_GITHUB_CHAR:='  '}
-SCM_GIT_CHAR_DEFAULT=${BARBUK_GIT_DEFAULT_CHAR:='  '}
+SCM_GIT_CHAR_DEFAULT=${BARBUK_GIT_DEFAULT_CHAR:='  '}
 SCM_GIT_CHAR_ICON_BRANCH=${BARBUK_GIT_BRANCH_ICON:=''}
 SCM_HG_CHAR=${BARBUK_HG_CHAR:='☿ '}
 SCM_SVN_CHAR=${BARBUK_SVN_CHAR:='⑆ '}
@@ -126,12 +126,6 @@ function __terraform_prompt() {
 	fi
 }
 
-function __node_prompt() {
-	local node_version=""
-
-	node_version="$(node_version_prompt)"
-	[[ -n "${node_version}" ]] && echo "${bold_purple?}${NODE_CHAR}${normal?}${node_version} "
-}
 
 function __ruby_prompt() {
 	local ruby_version=""
